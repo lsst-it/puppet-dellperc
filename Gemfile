@@ -30,7 +30,7 @@ group :system_tests do
   gem "puppet-module-win-system-r#{minor_version}", '~> 1.0',   require: false, platforms: [:mswin, :mingw, :x64_mingw]
 end
 
-puppet_version = ENV['PUPPET_GEM_VERSION']
+puppet_version = ENV['PUPPET_GEM_VERSION'] || '~> 6.0'
 facter_version = ENV['FACTER_GEM_VERSION']
 hiera_version = ENV['HIERA_GEM_VERSION']
 
