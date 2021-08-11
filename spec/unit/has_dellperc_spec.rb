@@ -1,8 +1,9 @@
 require 'spec_helper'
 
-describe 'has_dellperc', :type => :fact do
-  before(:each) { Facter.clear }
+describe 'has_dellperc', type: :fact do
   subject(:fact) { Facter.fact(:has_dellperc) }
+
+  before(:each) { Facter.clear }
 
   context 'on linux' do
     context 'on physical hardware' do
@@ -55,7 +56,6 @@ describe 'has_dellperc', :type => :fact do
         expect(subject.value).to be_nil
       end
     end
-
   end # on linux
 
   context 'not on linux' do
