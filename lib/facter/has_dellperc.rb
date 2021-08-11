@@ -20,7 +20,7 @@ Facter.add('has_dellperc') do
       # no lspci on this system
     else
       output = Facter::Util::Resolution.exec("#{haslspci} -v")
-      if output.match(%r{Dell PERC}i)
+      if %r{Dell PERC}i.match?(output)
         true
       else
         false
