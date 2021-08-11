@@ -2,9 +2,9 @@
   "name": "lsst-dellperc",
   "version": "0.1.0",
   "author": "AURA/LSST/Rubin Observatory",
-  "summary": "",
+  "summary": "Dell PERC module",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/lsst-it/puppet-dellperc",
   "dependencies": [
 
   ],
