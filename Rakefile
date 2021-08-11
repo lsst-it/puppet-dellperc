@@ -86,3 +86,14 @@ EOM
   end
 end
 
+task :default => %w(
+  check:symlinks
+  check:git_ignore
+  check:dot_underscore
+  check:test_file
+  rubocop
+  syntax
+  lint
+  metadata_lint
+  spec
+)
