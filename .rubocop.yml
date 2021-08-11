@@ -4,14 +4,15 @@ require:
 - rubocop-rspec
 AllCops:
   DisplayCopNames: true
-  TargetRubyVersion: '2.4'
+  TargetRubyVersion: '2.7'
+  NewCops: enable
   Include:
   - "**/*.rb"
+  - "**/Gemfile"
+  - "**/Rakefile"
   Exclude:
   - bin/*
   - ".vendor/**/*"
-  - "**/Gemfile"
-  - "**/Rakefile"
   - pkg/**/*
   - spec/fixtures/**/*
   - vendor/**/*
@@ -78,7 +79,7 @@ Style/Documentation:
   - lib/puppet/parser/functions/**/*
   - spec/**/*
 Style/WordArray:
-  EnforcedStyle: brackets
+  EnforcedStyle: percent
 Performance/AncestorsInclude:
   Enabled: true
 Performance/BigDecimalWithNumericArgument:
