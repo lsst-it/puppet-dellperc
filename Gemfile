@@ -1,28 +1,33 @@
 source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
-ruby_version_segments = Gem::Version.new(RUBY_VERSION.dup).segments
-minor_version = ruby_version_segments[0..1].join('.')
-
 group :test do
-  gem "puppet-module-posix-dev-r#{minor_version}", '~> 1.0', require: false, platforms: [:ruby]
-  gem 'rubocop', '~> 1.6.1',                                 require: false
-  gem 'rubocop-i18n', '~> 3.0.0',                            require: false
+  gem 'coveralls',                 require: false
+  gem 'simplecov-console',         require: false
+  gem 'voxpupuli-test', '~> 2.1',  require: false
+end
+
+group :development do
+  gem 'guard-rake',               require: false
+  gem 'overcommit', '>= 0.39.1',  require: false
 end
 
 group :system_tests do
-  gem "puppet-module-posix-system-r#{minor_version}", '~> 1.0', require: false, platforms: [:ruby]
-  gem 'voxpupuli-acceptance',                                   require: false
+  gem 'puppet_metadata', '~> 0.3.0',  require: false
+  gem 'voxpupuli-acceptance',         require: false
 end
 
+group :release do
+  gem 'github_changelog_generator', '>= 1.16.1',  require: false
+  gem 'puppet-blacksmith',                        require: false
+  gem 'puppet-strings', '>= 2.2',                 require: false
+  gem 'voxpupuli-release',                        require: false
+end
+
+gem 'facter', ENV['FACTER_GEM_VERSION'], require: false, groups: [:test]
 gem 'puppetlabs_spec_helper', '~> 2.0', require: false
-gem 'puppet_metadata', '~> 0.4.0',      require: false
+gem 'rake', require: false
 
-puppet_version = ENV['PUPPET_GEM_VERSION'] || '~> 6.0'
-facter_version = ENV['FACTER_GEM_VERSION']
-hiera_version = ENV['HIERA_GEM_VERSION']
-
-gem 'facter', facter_version, require: false, groups: [:test]
-gem 'hiera', hiera_version,   require: false, groups: [:test]
-gem 'puppet', puppet_version, require: false, groups: [:test]
+puppetversion = ENV['PUPPET_VERSION'] || '~> 6.0'
+gem 'puppet', puppetversion, require: false, groups: [:test]
 
 # vim: syntax=ruby
