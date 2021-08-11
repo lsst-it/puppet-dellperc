@@ -13,12 +13,12 @@ include RspecPuppetFacts
 
 default_facts = {
   puppetversion: Puppet.version,
-  facterversion: Facter.version,
+  facterversion: Facter.version
 }
 
 default_fact_files = [
   File.expand_path(File.join(File.dirname(__FILE__), 'default_facts.yml')),
-  File.expand_path(File.join(File.dirname(__FILE__), 'default_module_facts.yml')),
+  File.expand_path(File.join(File.dirname(__FILE__), 'default_module_facts.yml'))
 ]
 
 default_fact_files.each do |f|
@@ -51,7 +51,7 @@ RSpec.configure do |c|
   # Filter backtrace noise
   backtrace_exclusion_patterns = [
     %r{spec_helper},
-    %r{gems},
+    %r{gems}
   ]
 
   if c.respond_to?(:backtrace_exclusion_patterns)
