@@ -1,6 +1,6 @@
 # dellperc
 
-* ![CI](https://github.com/lsst-it/lsst-itconf/actions/workflows/ci.yml/badge.svg)
+* ![CI](https://github.com/lsst-it/lsst-dellperc/actions/workflows/ci.yml/badge.svg)
 
 ## Table of Contents
 
