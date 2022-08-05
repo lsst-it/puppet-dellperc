@@ -4,7 +4,6 @@
 
 ## Table of Contents
 
-
 1. [Overview](#overview)
 1. [Usage - Configuration options and additional functionality](#usage)
 
