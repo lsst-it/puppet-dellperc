@@ -5,7 +5,7 @@ require 'spec_helper'
 describe 'has_dellperc', type: :fact do
   subject(:fact) { Facter.fact(:has_dellperc) }
 
-  before(:each) { Facter.clear }
+  before { Facter.clear }
 
   on_supported_os.each do |os, facts|
     let(:facts) { facts }
@@ -57,8 +57,8 @@ describe 'has_dellperc', type: :fact do
           expect(fact.value).to be_nil
         end
       end
-    end # context "on #{os}"
-  end # on_supported_os
+    end
+  end
 
   context 'when not on linux' do
     it do
@@ -67,5 +67,5 @@ describe 'has_dellperc', type: :fact do
 
       expect(fact.value).to be_nil
     end
-  end # not on linux
+  end
 end
