@@ -1,6 +1,6 @@
 {
   "name": "lsst-dellperc",
-  "version": "2.0.0",
+  "version": "2.0.1-rc0",
   "author": "AURA/LSST/Rubin Observatory",
   "summary": "Dell PERC module",
   "license": "Apache-2.0",
